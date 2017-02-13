@@ -9,6 +9,28 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <title>Magic 8 Ball</title>
+<script>
+var answers = ["Not A Chance!", "It is certain", "Only Time Will Tell", 
+                     "In Your Dreams", "For Sure!", "Try Again", 
+                     "Only if you choose wisely.", "Ask your mom instead", 
+                     "I wish I could tell you.", "The Universe says 'yes!'", 
+                     "You wish!", "The Magic 8 Ball is positive.", 
+                     "In another lifetime, perhaps.", "Never!",
+                     "Affirmative.", "You are not worthy."];
+
+var qAsked = document.getElementById("myQ");
+
+function reply() {
+  if(qAsked !== "") {
+    var i=Math.floor((Math.random()*16)+1);
+    var answer = answers[i];
+    alert(answer);
+  }
+}
+function clearOut() {
+  document.getElementById("myQ").value = "";
+}
+</script>
     </head>
 
 <!-- ORANGE NAV BAR AT TOP-->
@@ -24,7 +46,7 @@
 <!-- Q&A area -->      
       <div class="container">  
         <div class="card-panel hoverable">
-        <input id="myQ" onFocus=clearOut() class="center" type="text" placeholder="Ask your question here!">
+        <input id="myQ" onfocus="clearOut()" class="center" type="text" placeholder="Ask your question here!">
       </div>
 <!--  The Black Ball -->              
         <div class="center">
@@ -32,7 +54,7 @@
         </div>
 <!-- SHAKE THE BALL BUTTON -->  
         <div class="center">
-          <button onclick=clearList() class="btn waves-effect black waves-light" type="submit" name="action">Shake the Magic 8 Ball!
+          <button onclick=reply() class="btn waves-effect black waves-light" type="submit" name="action">Shake the Magic 8 Ball!
           <i class="material-icons right">send</i>
           </button>
         </div>
@@ -58,32 +80,10 @@
       </div>
     </footer>
     <!-- my javascript -->
-    <script>
-var answers = ["Not A Chance!", "It is certain", "Only Time Will Tell", 
-                     "In Your Dreams", "For Sure!", "Try Again", 
-                     "Only if you choose wisely.", "Ask your mom instead", 
-                     "I wish I could tell you.", "The Universe says 'yes!'", 
-                     "You wish!", "The Magic 8 Ball is positive.", 
-                     "In another lifetime, perhaps.", "Never!",
-                     "Affirmative.", "You are not worthy."];
-
-var qAsked = document.getElementById("myQ");
-
-function reply() {
-  if(qAsked !== "") {
-    var i=Math.floor((Math.random()*16)+1);
-    var answer = answers[i];
-    alert(answer);
-  }
-}
-function clearOut() {
-  qAsked.value = "";
-}
-</script>
       <!--Import jQuery before materialize.js-->
       <!--Here's the jQuery -->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    
+<!--      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>    -->
       <!--Here's the Google Material js -->
-      <script type="text/javascript" src="js/materialize.min.js"></script>
+<!--      <script type="text/javascript" src="js/materialize.min.js"></script>-->
     </body>
   </html>
